@@ -1,59 +1,54 @@
-## Title of the Project
-Small description about the project like one below
-The integration of a chatbot within a hostel booking system, aimed at streamlining the reservation process for students and improving the overall user experience.
+# Title of the Project
+Heart Disease Segmentation Using MRI Images
+
+## Small Description
+The integration of a deep learning-based segmentation model in MRI heart scans, aimed at enhancing diagnostic accuracy and providing medical professionals with an automated tool for identifying and segmenting heart structures.
 
 ## About
-<!--Detailed Description about the project-->
-Tailored Chatbot for Hostel Booking System is a project designed to integrate a chatbot that leverages advanced natural language processing techniques to understand and respond to user queries to the hostel booking system. Traditional hostel booking processes are often time-consuming and involve manual searches and extensive communication with hostel staff. This project seeks to overcome these challenges by creating an easy-to-use chatbot interface that assists students in addressing inquiries.
+Heart Disease Segmentation Using MRI Images is a project designed to implement a deep learning model, specifically U-Net, to automatically segment key structures of the heart, such as the ventricles and myocardium, from MRI scans. Traditional segmentation methods are time-consuming and prone to human error. This project seeks to overcome these challenges by providing a tool that streamlines the process, ensuring faster and more accurate results for heart disease diagnosis.
 
 ## Features
-<!--List the features of the project as shown below-->
-- Implements advance neural network method.
-- A framework based application for deployment purpose.
-- High scalability.
-- Less time complexity.
-- A specific scope of Chatbot response model, using json data format.
+Implements advanced U-Net architecture for heart segmentation.
+A web-based interface for easy integration into clinical workflows.
+High segmentation accuracy and efficiency.
+Reduces manual intervention by automating the segmentation process.
+Provides clear delineation of heart structures to aid in diagnosis.
 
 ## Requirements
-<!--List the requirements of the project as shown below-->
-* Operating System: Requires a 64-bit OS (Windows 10 or Ubuntu) for compatibility with deep learning frameworks.
-* Development Environment: Python 3.6 or later is necessary for coding the sign language detection system.
-* Deep Learning Frameworks: TensorFlow for model training, MediaPipe for hand gesture recognition.
-* Image Processing Libraries: OpenCV is essential for efficient image processing and real-time hand gesture recognition.
-* Version Control: Implementation of Git for collaborative development and effective code management.
-* IDE: Use of VSCode as the Integrated Development Environment for coding, debugging, and version control integration.
-* Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), TensorFlow GPU, OpenCV, and Mediapipe for deep learning tasks.
+Operating System: Compatible with 64-bit OS (Windows 10 or Ubuntu) for deep learning framework compatibility.
+Development Environment: Python 3.6 or later is necessary for coding the MRI segmentation system.
+Deep Learning Frameworks: TensorFlow for model training and heart segmentation tasks.
+Image Processing Libraries: OpenCV for handling MRI images.
+Version Control: Git for collaborative development and version tracking.
+IDE: Use of VSCode or PyCharm for efficient coding and debugging.
+Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), OpenCV, and Numpy for deep learning and image processing tasks.
 
 ## System Architecture
-<!--Embed the system architecture diagram as shown below-->
+Input Layer: Preprocessed MRI heart images.
+Model: U-Net convolutional neural network for pixel-wise segmentation.
+Output Layer: Segmented MRI image with clear boundaries of heart structures such as the left ventricle, right ventricle, and myocardium.
 
-![Screenshot 2023-11-25 133637](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/a60c11f3-0a11-47fb-ac89-755d5f45c995)
 
 
 ## Output
+Output 1: Segmented MRI image showing the delineated left and right ventricles. Screenshot of segmented heart regions
 
-<!--Embed the Output picture at respective places as shown below as shown below-->
-#### Output1 - Name of the output
 
-![Screenshot 2023-11-25 134037](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/8c2b6b5c-5ed2-4ec4-b18e-5b6625402c16)
 
-#### Output2 - Name of the output
-![Screenshot 2023-11-25 134253](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/5e05c981-05ca-4aaa-aea2-d918dcf25cb7)
+Output 2: Visualization of myocardium in MRI scan. Screenshot of myocardial segmentation
 
-Detection Accuracy: 96.7%
-Note: These metrics can be customized based on your actual performance evaluations.
 
+
+Detection Accuracy
+Segmentation Accuracy: 94.8%
+Note: These metrics are subject to further tuning based on validation datasets.
 
 ## Results and Impact
-<!--Give the results and impact as shown below-->
-The Sign Language Detection System enhances accessibility for individuals with hearing and speech impairments, providing a valuable tool for inclusive communication. The project's integration of computer vision and deep learning showcases its potential for intuitive and interactive human-computer interaction.
+The Heart Disease Segmentation System significantly enhances the speed and accuracy of MRI heart scan analysis, offering a reliable tool for detecting and segmenting heart structures. This system aids radiologists and cardiologists in diagnosing heart conditions with greater precision, making healthcare more efficient.
 
-This project serves as a foundation for future developments in assistive technologies and contributes to creating a more inclusive and accessible digital environment.
+The integration of deep learning in medical imaging showcases the potential for future improvements in automated diagnostic tools, contributing to the development of more advanced, inclusive healthcare technologies.
 
-## Articles published / References
-1. N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods ”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-2. A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
+## Articles Published / References
+N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
 
-
-
-
+A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
