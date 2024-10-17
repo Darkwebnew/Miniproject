@@ -1,0 +1,50 @@
+/* Apply a background image and set properties for the whole page */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: url('C:\COLLEGE\3_YEAR\19AI701-Mini\BRAIN\ORIGINAL\static\heart.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Center container and give it a max width */
+.container {
+    text-align: center;
+}
+
+/* Style for the upload box with transparency */
+.upload-box {
+    background: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+/* Style for the form elements */
+input[type="file"] {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

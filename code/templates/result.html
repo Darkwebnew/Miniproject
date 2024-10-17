@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/result.css"> <!-- Link to your CSS file -->
+</head>
+<body class="{{ result_class }}">
+    <div class="result-container">
+        <h1>Prediction Result</h1>
+        <p><strong>Predicted Class:</strong> {{ predicted_class }}</p>
+        <p><strong>Confidence:</strong> {{ confidence }}</p>
+
+        {% if predicted_class == 'Normal' or predicted_class == 'Healthy' %}
+            <h2>Normal / Healthy</h2>
+            <p>The MRI results are normal, and no specific treatment is required at this time. Regular check-ups are recommended.</p>
+        {% else %}
+            <h2>Disease Information</h2>
+            <ul>
+                {% if predicted_class == 'Myocardial Infarction' %}
+                    <li><strong>Myocardial Infarction (Heart Attack):</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Aspirin, Thrombolytics, Antiplatelet agents, Beta-blockers, ACE inhibitors.</li>
+                            <li><strong>Hospital Visit:</strong> Immediate emergency care if symptoms like chest pain, shortness of breath, or pain in the arm/jaw occur.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Coronary Artery Disease' %}
+                    <li><strong>Coronary Artery Disease:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Statins, Aspirin or other antiplatelet drugs, Beta-blockers, ACE inhibitors.</li>
+                            <li><strong>Hospital Visit:</strong> Regular follow-up with a cardiologist; immediate care if experiencing chest pain or symptoms of a heart attack.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Arrhythmias' %}
+                    <li><strong>Arrhythmias (Irregular Heartbeats):</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Antiarrhythmics, Blood thinners, Beta-blockers.</li>
+                            <li><strong>Hospital Visit:</strong> If experiencing palpitations, dizziness, or fainting spells.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Heart Failure' %}
+                    <li><strong>Heart Failure:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Diuretics, ACE inhibitors or ARBs, Beta-blockers, Aldosterone antagonists.</li>
+                            <li><strong>Hospital Visit:</strong> For severe symptoms like shortness of breath, swelling in legs, or worsening fatigue.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Heart Valve Disease' %}
+                    <li><strong>Heart Valve Disease:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Diuretics, Anticoagulants, Medications to manage blood pressure.</li>
+                            <li><strong>Hospital Visit:</strong> If symptoms worsen or new symptoms arise.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Cardiomyopathy' %}
+                    <li><strong>Cardiomyopathy:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Beta-blockers, ACE inhibitors, Diuretics.</li>
+                            <li><strong>Hospital Visit:</strong> Regular cardiology follow-ups; immediate care for severe symptoms.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Congenital Heart Defects' %}
+                    <li><strong>Congenital Heart Defects:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Depending on the specific defect, medication may vary.</li>
+                            <li><strong>Hospital Visit:</strong> Regular follow-up with a pediatric cardiologist for children, or adult cardiologist for adults.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Pericarditis' %}
+                    <li><strong>Pericarditis:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Anti-inflammatory medications, Colchicine, Corticosteroids for severe cases.</li>
+                            <li><strong>Hospital Visit:</strong> If experiencing chest pain, fever, or persistent symptoms.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Aortic Disease' %}
+                    <li><strong>Aortic Disease:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Beta-blockers, Antihypertensives.</li>
+                            <li><strong>Hospital Visit:</strong> If symptoms such as sudden severe chest or back pain occur.</li>
+                        </ul>
+                    </li>
+                {% elif predicted_class == 'Chronic Ischemic Heart Disease' %}
+                    <li><strong>Chronic Ischemic Heart Disease:</strong>
+                        <ul>
+                            <li><strong>Medications:</strong> Aspirin, Statins, Beta-blockers, ACE inhibitors.</li>
+                            <li><strong>Hospital Visit:</strong> For worsening symptoms or chest pain.</li>
+                        </ul>
+                    </li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
