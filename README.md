@@ -46,6 +46,3 @@ The Heart Disease Segmentation System significantly enhances the speed and accur
 The integration of deep learning in medical imaging showcases the potential for future improvements in automated diagnostic tools, contributing to the development of more advanced, inclusive healthcare technologies.
 
 ## Articles Published / References
-N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-
-A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
