@@ -1,8 +1,5 @@
-# Title of the Project
-Heart Disease Segmentation Using MRI Images
-
-## Small Description
-The integration of a deep learning-based segmentation model in MRI heart scans, aimed at enhancing diagnostic accuracy and providing medical professionals with an automated tool for identifying and segmenting heart structures.
+# Heart Disease Segmentation Using MRI Images
+Small Description about the integration of a deep learning-based segmentation model in MRI heart scans, aimed at enhancing diagnostic accuracy and providing medical professionals with an automated tool for identifying and segmenting heart structures.
 
 ## About
 Heart Disease Segmentation Using MRI Images is a project designed to implement a deep learning model, specifically U-Net, to automatically segment key structures of the heart, such as the ventricles and myocardium, from MRI scans. Traditional segmentation methods are time-consuming and prone to human error. This project seeks to overcome these challenges by providing a tool that streamlines the process, ensuring faster and more accurate results for heart disease diagnosis.
