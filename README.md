@@ -30,11 +30,15 @@ Output Layer: Segmented MRI image with clear boundaries of heart structures such
 ## Output
 Output 1: Segmented MRI image showing the delineated left and right ventricles. Screenshot of segmented heart regions
 
-
+![image](https://github.com/user-attachments/assets/6201c6b2-a389-434d-80b7-45137573cd77)
 
 Output 2: Visualization of myocardium in MRI scan. Screenshot of myocardial segmentation
 
+![image](https://github.com/user-attachments/assets/bdc27cf8-aa90-434a-9af3-7c6b187fa5d4)
 
+![image](https://github.com/user-attachments/assets/3c730e50-71fc-46ea-967a-38d36373153e)
+
+![image](https://github.com/user-attachments/assets/0621e34a-4612-45b5-8ffa-fde9ffe7dc3a)
 
 Detection Accuracy
 Segmentation Accuracy: 94.8%
