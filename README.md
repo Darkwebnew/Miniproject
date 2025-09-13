@@ -32,23 +32,23 @@ Output 1: Segmented MRI image showing the delineated left and right ventricles. 
 
 Output 2: Visualization of myocardium in MRI scan. Screenshot of myocardial segmentation
 
-![Screenshot 2024-11-02 142539](https://github.com/user-attachments/assets/d207bba1-c234-4b62-99a5-82a0483faf1e)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20142539.png)
 
-![Screenshot 2024-11-02 142826](https://github.com/user-attachments/assets/110cb571-92f2-43cd-9cec-8782337d7690)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20142826.png)
 
-![Screenshot 2024-11-02 143527](https://github.com/user-attachments/assets/7b4464ef-c206-421e-8790-de7d04acd480)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20143527.png)
 
-![Screenshot 2024-10-16 143401](https://github.com/user-attachments/assets/3e376e50-0224-4d95-9ce7-051fba8c51b6)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20144933.png)
 
-![Screenshot 2024-10-16 143454](https://github.com/user-attachments/assets/2ca3cb0a-0731-4d1f-80ab-4735ff2da969)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143401.png)
 
-![Screenshot 2024-10-16 143537](https://github.com/user-attachments/assets/438a3e5d-1498-4a17-9802-0fea54f89097)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143454.png)
 
-![Screenshot 2024-10-16 143608](https://github.com/user-attachments/assets/7c672080-949a-4c8b-a276-927b8911a902)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143537.png)
 
-![Screenshot 2024-10-16 143647](https://github.com/user-attachments/assets/9e436984-e41c-4ce8-8607-73fa0d7790f6)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143608.png)
 
-![Screenshot 2024-11-02 144933](https://github.com/user-attachments/assets/a4ccbe99-704f-4650-913f-920b957671db)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143647.png)
 
 Detection Accuracy
 Segmentation Accuracy: 94.8%
@@ -95,3 +95,4 @@ The integration of deep learning in medical imaging showcases the potential for 
 17.	FERNANDEZ, J., & LIU, B. (2024). “REAL-TIME CARDIAC MRI SEGMENTATION USING DEEP LEARNING TECHNIQUES.” IN 2024 IEEE CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR), 2024, PP. 478-483.
 
 18.	CHEN, L., & WANG, G. (2022). “ENHANCED HEART DISEASE PREDICTION USING MACHINE LEARNING TECHNIQUES.” IN 2022 INTERNATIONAL CONFERENCE ON BIOMEDICAL ENGINEERING (ICBME), 2022, PP. 86-90.
+
