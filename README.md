@@ -28,7 +28,7 @@ Output Layer: Segmented MRI image with clear boundaries of heart structures such
 ## Output
 Output 1: Segmented MRI image showing the delineated left and right ventricles. Screenshot of segmented heart regions
 
-![image](https://github.com/user-attachments/assets/6201c6b2-a389-434d-80b7-45137573cd77)
+![image](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-20%20141654.png)
 
 Output 2: Visualization of myocardium in MRI scan. Screenshot of myocardial segmentation
 
@@ -95,4 +95,5 @@ The integration of deep learning in medical imaging showcases the potential for 
 17.	FERNANDEZ, J., & LIU, B. (2024). “REAL-TIME CARDIAC MRI SEGMENTATION USING DEEP LEARNING TECHNIQUES.” IN 2024 IEEE CONFERENCE ON COMPUTER VISION AND PATTERN RECOGNITION (CVPR), 2024, PP. 478-483.
 
 18.	CHEN, L., & WANG, G. (2022). “ENHANCED HEART DISEASE PREDICTION USING MACHINE LEARNING TECHNIQUES.” IN 2022 INTERNATIONAL CONFERENCE ON BIOMEDICAL ENGINEERING (ICBME), 2022, PP. 86-90.
+
 
