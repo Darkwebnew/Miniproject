@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("https://c4.wallpaperflare.com/wallpaper/145/300/905/heart-high-resolution-wallpaper-preview.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.upload-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.upload-container h2 {
+    margin-bottom: 20px;
+}
+
+.upload-container input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.upload-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(0, 81, 255);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.upload-container button:hover {
+    background: rgb(72, 255, 0);
+}
