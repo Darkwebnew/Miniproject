@@ -1,10 +1,7 @@
 # 🫀 Heart Disease Segmentation Using MRI Images
-
 > **A state-of-the-art deep learning solution for automated cardiac structure segmentation in MRI scans**
 
-[![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/downloads/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4.1-orange.svg)](https://www.tensorflow.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)](https://www.python.org/downloads/) [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4.1-orange.svg)](https://www.tensorflow.org/) [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
@@ -13,6 +10,7 @@
 **Heart Disease Segmentation Using MRI Images** is an innovative project that leverages the power of deep learning to revolutionize cardiac diagnostics. By implementing the **U-Net architecture**, this system automatically segments critical heart structures—including the **left ventricle, right ventricle, and myocardium**—from MRI scans.
 
 Traditional manual segmentation methods are not only time-consuming but also prone to human error and inconsistency. Our automated solution addresses these challenges by:
+
 - ⚡ **Accelerating** the segmentation process
 - 🎯 **Enhancing** diagnostic accuracy
 - 🤖 **Reducing** manual intervention
@@ -60,31 +58,15 @@ pip install scikit-learn
 
 ```mermaid
 graph TB
-    A[MRI Heart Images] --> B[Preprocessing]
-    B --> C[Image Normalization]
-    C --> D[Data Augmentation]
-    D --> E[U-Net Model]
-    
-    E --> F[Encoder Block 1]
-    F --> G[Encoder Block 2]
-    G --> H[Encoder Block 3]
-    H --> I[Bottleneck]
-    I --> J[Decoder Block 3]
-    J --> K[Decoder Block 2]
-    K --> L[Decoder Block 1]
-    
-    L --> M[Output Layer]
-    M --> N[Segmented Image]
-    N --> O[Left Ventricle]
-    N --> P[Right Ventricle]
-    N --> Q[Myocardium]
-    
-    style A fill:#e1f5ff
-    style E fill:#fff4e1
-    style N fill:#e8f5e9
-    style O fill:#c8e6c9
-    style P fill:#c8e6c9
-    style Q fill:#c8e6c9
+    A[Input: MRI Heart Images] --> B[Preprocessing]
+    B --> C[Data Augmentation]
+    C --> D[U-Net Model]
+    D --> E[Encoder Path]
+    E --> F[Bottleneck]
+    F --> G[Decoder Path]
+    G --> H[Output: Segmentation Mask]
+    H --> I[Post-processing]
+    I --> J[Final Segmented Image]
 ```
 
 ### Architecture Components:
@@ -104,31 +86,19 @@ graph TB
 
 **Output 1: Left and Right Ventricle Segmentation**
 
-![Segmented heart regions](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-20%20141654.png)
+<img src="img/Screenshot%202024-10-20%20141654.png.png" alt="Segmented heart regions" width="600">
 
 **Output 2: Myocardium Visualization**
 
-![Myocardial segmentation](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20142539.png)
+<img src="img/Screenshot%202024-11-02%20142539.png.png" alt="Myocardial segmentation" width="600">
 
 **Output 3: Multi-View Analysis**
 
-![Multi-view analysis 1](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20142826.png)
-
-![Multi-view analysis 2](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20143527.png)
-
-![Multi-view analysis 3](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-11-02%20144933.png)
+<img src="img/Screenshot%202024-11-02%20142826.png.png" alt="Multi-view analysis 1" width="300"> <img src="img/Screenshot%202024-11-02%20143527.png.png" alt="Multi-view analysis 2" width="300"> <img src="img/Screenshot%202024-11-02%20144933.png.png" alt="Multi-view analysis 3" width="300">
 
 **Output 4: Detailed Segmentation Results**
 
-![Detailed segmentation 1](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143401.png)
-
-![Detailed segmentation 2](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143454.png)
-
-![Detailed segmentation 3](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143537.png)
-
-![Detailed segmentation 4](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143608.png)
-
-![Detailed segmentation 5](https://github.com/Darkwebnew/Miniproject/blob/main/img/Screenshot%202024-10-16%20143647.png)
+<img src="img/Screenshot%202024-10-16%20143401.png.png" alt="Detailed segmentation 1" width="200"> <img src="img/Screenshot%202024-10-16%20143454.png.png" alt="Detailed segmentation 2" width="200"> <img src="img/Screenshot%202024-10-16%20143537.png.png" alt="Detailed segmentation 3" width="200"> <img src="img/Screenshot%202024-10-16%20143608.png.png" alt="Detailed segmentation 4" width="200"> <img src="img/Screenshot%202024-10-16%20143647.png.png" alt="Detailed segmentation 5" width="200">
 
 ---
 
@@ -153,6 +123,7 @@ The **Heart Disease Segmentation System** represents a significant advancement i
 - 🔬 **Research Potential**: Demonstrates the transformative power of deep learning in medical diagnostics
 
 By integrating cutting-edge AI technology with medical imaging, this project paves the way for:
+
 - **Improved patient outcomes** through faster, more accurate diagnoses
 - **Reduced workload** for medical professionals
 - **Standardized analysis** across different healthcare facilities
@@ -164,7 +135,8 @@ By integrating cutting-edge AI technology with medical imaging, this project pav
 
 | Avatar | Name | Role | GitHub |
 |--------|------|------|--------|
-| <img src="https://avatars.githubusercontent.com/u/133313653?v=4" width="80" height="80" style="border-radius: 50%;"> | **surothaaman** | Project Lead & Developer | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/surothaaman) |
+| <img src="https://avatars.githubusercontent.com/u/132263984?v=4" width="80" height="80" style="border-radius: 50%;"> | **Darkwebnew (HARISH_AMMU_15)** | Project Lead & Developer | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/Darkwebnew) |
+| <img src="https://avatars.githubusercontent.com/u/133313653?v=4" width="80" height="80" style="border-radius: 50%;"> | **surothaaman** | Contributor | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/surothaaman) |
 
 ---
 
