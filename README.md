@@ -135,8 +135,9 @@ By integrating cutting-edge AI technology with medical imaging, this project pav
 
 | Avatar | Name | Role | GitHub |
 |--------|------|------|--------|
-| <img src="https://avatars.githubusercontent.com/u/132263984?v=4" width="80" height="80" style="border-radius: 50%;"> | **Darkwebnew (HARISH_AMMU_15)** | Project Lead & Developer | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/Darkwebnew) |
-| <img src="https://avatars.githubusercontent.com/u/133313653?v=4" width="80" height="80" style="border-radius: 50%;"> | **surothaaman** | Contributor | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/surothaaman) |
+| <img src="https://avatars.githubusercontent.com/u/143114486?v=4" width="80" height="80" style="border-radius: 50%;"> | **Sriram V** | Project Lead & Developer | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/darkwebnew) |
+| <img src="https://avatars.githubusercontent.com/u/133313653?v=4" width="80" height="80" style="border-radius: 50%;"> | **Surothaaman R** | Contributor | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/surothaaman) |
+| <img src="https://avatars.githubusercontent.com/u/145822115?v=4" width="80" height="80" style="border-radius: 50%;"> | **Andrew Varhese V S** | Contributor | [![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/Andrewvarghese653) |
 
 ---
 
@@ -157,3 +158,4 @@ For questions or collaboration opportunities, please reach out through GitHub.
 <div align="center">
   <strong>Made with ❤️ for advancing cardiac healthcare</strong>
 </div>
+
