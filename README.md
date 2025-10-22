@@ -82,23 +82,23 @@ graph TB
 
 ## 📸 Output Examples
 
-### Segmented Heart Regions
+<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/78357efe-4155-400c-9c19-2069a40c94fc" />
 
-**Output 1: Left and Right Ventricle Segmentation**
+<img width="1919" height="1090" alt="image" src="https://github.com/user-attachments/assets/1d40bfac-23d4-4011-b8f1-c0e14bd20503" />
 
-<img src="img/Screenshot%202024-10-20%20141654.png.png" alt="Segmented heart regions" width="600">
+<img width="1919" height="1088" alt="image" src="https://github.com/user-attachments/assets/3cbed182-decf-4070-a8b9-cb93cb8a3e26" />
 
-**Output 2: Myocardium Visualization**
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/03d5ce17-cdd5-43f9-81cf-98b8ee9174c6" />
 
-<img src="img/Screenshot%202024-11-02%20142539.png.png" alt="Myocardial segmentation" width="600">
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/a3c99e46-3f13-445c-8414-1a8d3992be76" />
 
-**Output 3: Multi-View Analysis**
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/f497efc9-0908-46f0-9cf1-b0ba94dfcbe5" />
 
-<img src="img/Screenshot%202024-11-02%20142826.png.png" alt="Multi-view analysis 1" width="300"> <img src="img/Screenshot%202024-11-02%20143527.png.png" alt="Multi-view analysis 2" width="300"> <img src="img/Screenshot%202024-11-02%20144933.png.png" alt="Multi-view analysis 3" width="300">
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/941d2c0d-2202-4afb-aa4e-404747fc92f3" />
 
-**Output 4: Detailed Segmentation Results**
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/62916de5-5baf-4582-94b8-b5722216a81b" />
 
-<img src="img/Screenshot%202024-10-16%20143401.png.png" alt="Detailed segmentation 1" width="200"> <img src="img/Screenshot%202024-10-16%20143454.png.png" alt="Detailed segmentation 2" width="200"> <img src="img/Screenshot%202024-10-16%20143537.png.png" alt="Detailed segmentation 3" width="200"> <img src="img/Screenshot%202024-10-16%20143608.png.png" alt="Detailed segmentation 4" width="200"> <img src="img/Screenshot%202024-10-16%20143647.png.png" alt="Detailed segmentation 5" width="200">
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d93c4956-a1b3-4190-b64d-fe66a0e8923f" />
 
 ---
 
@@ -158,4 +158,5 @@ For questions or collaboration opportunities, please reach out through GitHub.
 <div align="center">
   <strong>Made with ❤️ for advancing cardiac healthcare</strong>
 </div>
+
 
