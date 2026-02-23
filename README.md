@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,8,16&height=200&section=header&text=HeartSeg%20AI&fontSize=72&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Heart%20Disease%20Segmentation%20Using%20MRI%20Images%20%E2%80%94%20U-Net%20Deep%20Learning&descAlignY=55&descSize=15" width="100%"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1000&color=FF6B9D&center=true&vCenter=true&multiline=true&width=900&height=60&lines=U-Net+Cardiac+Segmentation+%7C+94.8%25+Accuracy+%7C+Left+%26+Right+Ventricle+%2B+Myocardium)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1000&color=FF6B9D&center=true&vCenter=true&multiline=true&width=1600&height=60&lines=U-Net+Cardiac+Segmentation+%7C+94.8%25+Accuracy+%7C+Left+%26+Right+Ventricle+%2B+Myocardium)](https://git.io/typing-svg)
 
 <br/>
 
@@ -562,6 +562,7 @@ See the full [`LICENSE.txt`](LICENSE.txt) for complete terms.
 [🐛 Report Bug](https://github.com/Darkwebnew/Miniproject/issues) · [💡 Request Feature](https://github.com/Darkwebnew/Miniproject/issues)
 
 </div>
+
 
 
 
