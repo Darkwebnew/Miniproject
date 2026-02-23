@@ -143,7 +143,7 @@ Manual cardiac MRI segmentation is a bottleneck in clinical cardiology — it ta
 
 <div align="center">
 
-![HeartSeg Architecture](img/architecture_diagram.png)
+![HeartSeg Architecture](img/heartseg-architecture.png)
 
 *U-Net encoder-decoder architecture: MRI input → feature extraction → pixel-wise segmentation mask*
 
@@ -562,4 +562,5 @@ See the full [`LICENSE.txt`](LICENSE.txt) for complete terms.
 [🐛 Report Bug](https://github.com/Darkwebnew/Miniproject/issues) · [💡 Request Feature](https://github.com/Darkwebnew/Miniproject/issues)
 
 </div>
+
 
