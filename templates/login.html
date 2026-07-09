@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | HeartSeg AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+    <div class="login-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-card glass">
+            <div class="login-header">
+                <a href="{{ url_for('home') }}" class="logo">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                    <span>HeartSeg AI</span>
+                </a>
+                <p>Secure access to the cardiac MRI segmentation platform</p>
+            </div>
+
+            <form method="POST" action="{{ url_for('login') }}" class="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required autofocus>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        <button type="button" class="toggle-pass" onclick="togglePassword()" aria-label="Toggle password">
+                            <i class="fa-solid fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="login-options">
+                    <label class="remember">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-login-submit">
+                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    Sign In
+                </button>
+            </form>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <div class="login-footer">
+                <p>Protected by end-to-end encryption</p>
+                <div class="security-badges">
+                    <span><i class="fa-solid fa-shield-halved"></i> HIPAA Aligned</span>
+                    <span><i class="fa-solid fa-lock"></i> SSL Secured</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-hero">
+            <h2>AI-Powered Cardiac MRI Segmentation</h2>
+            <p>Automated deep learning analysis for faster, more reliable cardiac diagnostics.</p>
+            <div class="hero-stats-mini">
+                <div class="mini-stat">
+                    <h4>94.8%</h4>
+                    <span>Accuracy</span>
+                </div>
+                <div class="mini-stat">
+                    <h4>12</h4>
+                    <span>Classes</span>
+                </div>
+                <div class="mini-stat">
+                    <h4>&lt;2s</h4>
+                    <span>Inference</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const input = document.getElementById('password');
+            const icon = document.getElementById('eyeIcon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
+</body>
+</html>

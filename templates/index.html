@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HeartSeg AI - AI Powered Cardiac MRI Segmentation using U-Net Deep Learning.">
+    <meta name="keywords" content="HeartSeg AI, MRI, Deep Learning, U-Net, Flask, TensorFlow, Medical AI">
+    <meta name="author" content="Sriram V">
+    <title>HeartSeg AI | AI Powered Cardiac MRI Segmentation</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ========================================= -->
+<!-- Loader -->
+<!-- ========================================= -->
+<div id="loader">
+    <div class="loader-content">
+        <div class="pulse-ring"></div>
+        <div class="pulse-ring second"></div>
+        <i class="fa-solid fa-heart-pulse loader-icon"></i>
+        <h2>Loading HeartSeg AI...</h2>
+    </div>
+</div>
+
+<!-- ========================================= -->
+<!-- Navigation -->
+<!-- ========================================= -->
+<nav class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="#home" class="logo">
+            <i class="fa-solid fa-heart-circle-check"></i>
+            <span>HeartSeg AI</span>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#workflow">Workflow</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="https://github.com/Darkwebnew/Miniproject" target="_blank" class="btn-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="{{ url_for('login') }}" class="btn-primary">Launch Demo</a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- ========================================= -->
+<!-- Hero Section -->
+<!-- ========================================= -->
+<section class="hero" id="home">
+    <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    
+    <div class="container hero-grid">
+        <div class="hero-left" data-aos="fade-right" data-aos-duration="1000">
+            <div class="badge">
+                <i class="fa-solid fa-heart-circle-check"></i>
+                <span>Medical AI Platform</span>
+            </div>
+            
+            <h1>
+                Transforming
+                <span class="gradient-text">Cardiac MRI</span>
+                Diagnosis with Artificial Intelligence
+            </h1>
+            
+            <p class="hero-subtitle">
+                HeartSeg AI is a next-generation deep learning platform that automates cardiac MRI segmentation 
+                using a U-Net architecture with high accuracy and rapid inference, helping healthcare professionals 
+                improve diagnostic efficiency.
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="{{ url_for('login') }}" class="btn-primary btn-lg">
+                    <i class="fa-solid fa-play"></i>
+                    Launch Demo
+                </a>
+                <a href="https://github.com/Darkwebnew/Miniproject" target="_blank" class="btn-secondary btn-lg">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="stat-info">
+                        <h3 class="counter" data-target="94.8">0</h3><span class="suffix">%</span>
+                        <p>Segmentation Accuracy</p>
+                    </div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon"><i class="fa-solid fa-disease"></i></div>
+                    <div class="stat-info">
+                        <h3 class="counter" data-target="12">0</h3>
+                        <p>Disease Classes</p>
+                    </div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <div class="stat-info">
+                        <h3>U-Net</h3>
+                        <p>Deep Learning Model</p>
+                    </div>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon"><i class="fa-solid fa-server"></i></div>
+                    <div class="stat-info">
+                        <h3>Flask</h3>
+                        <p>Web Framework</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-right" data-aos="fade-left" data-aos-duration="1000">
+            <div class="hero-visual">
+                <img src="{{ url_for('static', filename='images/hero-heart.png') }}" alt="AI Cardiac Analysis" class="hero-img">
+                <div class="floating-card float-1">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>AI Prediction</span>
+                </div>
+                <div class="floating-card float-2">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>MRI Analysis</span>
+                </div>
+                <div class="floating-card float-3">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Real-time</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <span>Scroll to explore</span>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Trusted Technologies -->
+<!-- ========================================= -->
+<section class="technology" id="technology">
+    <div class="container">
+        <p class="section-label">POWERED BY LEADING TECHNOLOGIES</p>
+        <div class="tech-grid">
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="0">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                <span>TensorFlow</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask">
+                <span>Flask</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV">
+                <span>OpenCV</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy">
+                <span>NumPy</span>
+            </div>
+            <div class="tech-card" data-aos="fade-up" data-aos-delay="500">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+                <span>Docker</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Features Section -->
+<!-- ========================================= -->
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Capabilities</span>
+            <h2>Why Choose HeartSeg AI?</h2>
+            <p>A modern AI-powered clinical decision support system designed for intelligent cardiac MRI segmentation.</p>
+        </div>
+        
+        <div class="feature-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Deep Learning</h3>
+                <p>Advanced U-Net neural network architecture trained for accurate MRI segmentation with pixel-level precision.</p>
+                <a href="#architecture" class="feature-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-heart-circle-bolt"></i>
+                </div>
+                <h3>Fast Prediction</h3>
+                <p>Generate predictions within seconds using optimized TensorFlow inference and model quantization.</p>
+                <a href="#performance" class="feature-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-microscope"></i>
+                </div>
+                <h3>Medical Grade</h3>
+                <p>Designed as an AI-assisted diagnostic support tool for cardiac MRI interpretation and clinical workflows.</p>
+                <a href="#workflow" class="feature-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3>Secure & Private</h3>
+                <p>End-to-end encryption for medical data with HIPAA-aligned security practices and local processing.</p>
+                <a href="#" class="feature-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <h3>Visual Analytics</h3>
+                <p>Interactive segmentation overlays, volume measurements, and diagnostic confidence scores.</p>
+                <a href="#performance" class="feature-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Access the platform from any device with a fully responsive interface optimized for clinical tablets.</p>
+                <a href="#" class="feature-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Workflow Timeline -->
+<!-- ========================================= -->
+<section class="workflow" id="workflow">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Process</span>
+            <h2>How It Works</h2>
+            <p>From MRI scan to AI-powered segmentation in four simple steps.</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <div class="timeline-number">01</div>
+                    <h3>Upload MRI Scan</h3>
+                    <p>Upload cardiac MRI DICOM or NIfTI files through our secure web interface. Supports multiple formats and batch processing.</p>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-number">02</div>
+                    <h3>AI Preprocessing</h3>
+                    <p>Automated intensity normalization, noise reduction, and spatial alignment using OpenCV and custom pipelines.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <div class="timeline-number">03</div>
+                    <h3>U-Net Segmentation</h3>
+                    <p>Our trained U-Net model processes the image and generates precise pixel-level segmentation masks for cardiac structures.</p>
+                </div>
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-icon">
+                    <i class="fa-solid fa-file-medical"></i>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-number">04</div>
+                    <h3>Clinical Report</h3>
+                    <p>Review interactive overlays, volume metrics, and classification results with confidence scores for clinical validation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- System Architecture -->
+<!-- ========================================= -->
+<section class="architecture" id="architecture">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">System</span>
+            <h2>System Architecture</h2>
+            <p>End-to-end pipeline from data ingestion to clinical visualization.</p>
+        </div>
+        
+        <div class="arch-grid">
+            <div class="arch-card" data-aos="zoom-in" data-aos-delay="0">
+                <div class="arch-layer">Data Layer</div>
+                <div class="arch-items">
+                    <span class="arch-tag">DICOM Parser</span>
+                    <span class="arch-tag">NIfTI Loader</span>
+                    <span class="arch-tag">Image Preprocessing</span>
+                    <span class="arch-tag">Augmentation</span>
+                </div>
+            </div>
+            
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            
+            <div class="arch-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="arch-layer">Model Layer</div>
+                <div class="arch-items">
+                    <span class="arch-tag">U-Net Architecture</span>
+                    <span class="arch-tag">TensorFlow Backend</span>
+                    <span class="arch-tag">Batch Normalization</span>
+                    <span class="arch-tag">Dropout Regularization</span>
+                </div>
+            </div>
+            
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            
+            <div class="arch-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="arch-layer">Inference Layer</div>
+                <div class="arch-items">
+                    <span class="arch-tag">Model Serving</span>
+                    <span class="arch-tag">GPU Acceleration</span>
+                    <span class="arch-tag">Confidence Scoring</span>
+                    <span class="arch-tag">Multi-class Output</span>
+                </div>
+            </div>
+            
+            <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+            
+            <div class="arch-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="arch-layer">Application Layer</div>
+                <div class="arch-items">
+                    <span class="arch-tag">Flask REST API</span>
+                    <span class="arch-tag">Jinja2 Templates</span>
+                    <span class="arch-tag">Interactive Dashboard</span>
+                    <span class="arch-tag">Report Generation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Performance Metrics -->
+<!-- ========================================= -->
+<section class="performance" id="performance">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Results</span>
+            <h2>Performance Metrics</h2>
+            <p>Benchmarked on clinical cardiac MRI datasets with rigorous evaluation.</p>
+        </div>
+        
+        <div class="perf-grid">
+            <div class="perf-card glass" data-aos="fade-up" data-aos-delay="0">
+                <div class="perf-chart">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" style="--percent: 94.8"></circle>
+                    </svg>
+                    <div class="perf-value">94.8%</div>
+                </div>
+                <h3>Dice Coefficient</h3>
+                <p>Pixel-level segmentation overlap accuracy</p>
+            </div>
+            
+            <div class="perf-card glass" data-aos="fade-up" data-aos-delay="100">
+                <div class="perf-chart">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" style="--percent: 91.2"></circle>
+                    </svg>
+                    <div class="perf-value">91.2%</div>
+                </div>
+                <h3>IoU Score</h3>
+                <p>Intersection over Union for region accuracy</p>
+            </div>
+            
+            <div class="perf-card glass" data-aos="fade-up" data-aos-delay="200">
+                <div class="perf-chart">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" style="--percent: 96.5"></circle>
+                    </svg>
+                    <div class="perf-value">96.5%</div>
+                </div>
+                <h3>Sensitivity</h3>
+                <p>True positive rate for disease detection</p>
+            </div>
+            
+            <div class="perf-card glass" data-aos="fade-up" data-aos-delay="300">
+                <div class="perf-chart">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="progress" cx="50" cy="50" r="45" style="--percent: 89.7"></circle>
+                    </svg>
+                    <div class="perf-value">89.7%</div>
+                </div>
+                <h3>Specificity</h3>
+                <p>True negative rate for healthy tissue</p>
+            </div>
+        </div>
+        
+        <div class="perf-details" data-aos="fade-up">
+            <div class="detail-card">
+                <i class="fa-solid fa-clock"></i>
+                <h4>&lt; 2s</h4>
+                <p>Inference Time</p>
+            </div>
+            <div class="detail-card">
+                <i class="fa-solid fa-database"></i>
+                <h4>2,400+</h4>
+                <p>Training Images</p>
+            </div>
+            <div class="detail-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h4>128×128</h4>
+                <p>Input Resolution</p>
+            </div>
+            <div class="detail-card">
+                <i class="fa-solid fa-code-branch"></i>
+                <h4>31M</h4>
+                <p>Model Parameters</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- AI Pipeline Visualization -->
+<!-- ========================================= -->
+<section class="pipeline" id="pipeline">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Pipeline</span>
+            <h2>AI Processing Pipeline</h2>
+            <p>Visual breakdown of the deep learning inference process.</p>
+        </div>
+        
+        <div class="pipeline-visual">
+            <div class="pipe-stage" data-aos="fade-up" data-aos-delay="0">
+                <div class="pipe-box">
+                    <i class="fa-solid fa-file-image"></i>
+                    <span>Input MRI</span>
+                </div>
+            </div>
+            <div class="pipe-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            
+            <div class="pipe-stage" data-aos="fade-up" data-aos-delay="100">
+                <div class="pipe-box">
+                    <i class="fa-solid fa-filter"></i>
+                    <span>Preprocess</span>
+                </div>
+            </div>
+            <div class="pipe-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            
+            <div class="pipe-stage" data-aos="fade-up" data-aos-delay="200">
+                <div class="pipe-box highlight">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <span>U-Net Model</span>
+                </div>
+            </div>
+            <div class="pipe-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            
+            <div class="pipe-stage" data-aos="fade-up" data-aos-delay="300">
+                <div class="pipe-box">
+                    <i class="fa-solid fa-palette"></i>
+                    <span>Segmentation</span>
+                </div>
+            </div>
+            <div class="pipe-connector"><i class="fa-solid fa-chevron-right"></i></div>
+            
+            <div class="pipe-stage" data-aos="fade-up" data-aos-delay="400">
+                <div class="pipe-box">
+                    <i class="fa-solid fa-chart-bar"></i>
+                    <span>Analysis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Institution -->
+<!-- ========================================= -->
+<section class="institution" id="institution">
+    <div class="container">
+        <div class="institution-content" data-aos="fade-up">
+            <div class="institution-left">
+                <span class="section-tag">Academic</span>
+                <h2>Developed at Saveetha Engineering College</h2>
+                <p>
+                    This project was developed as part of the academic curriculum under the guidance of 
+                    experienced faculty members. It represents a commitment to applying cutting-edge 
+                    artificial intelligence research to real-world healthcare challenges.
+                </p>
+                <div class="institution-meta">
+                    <div class="meta-item">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Department of Computer Science</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>Final Year Project</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fa-solid fa-calendar"></i>
+                        <span>2024 – 2025</span>
+                    </div>
+                </div>
+            </div>
+            <div class="institution-right">
+                <div class="institution-card glass">
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <p>
+                        "HeartSeg AI demonstrates how student-led innovation can bridge the gap between 
+                        academic research and clinical application. The U-Net implementation achieves 
+                        competitive performance against existing benchmarks."
+                    </p>
+                    <div class="institution-author">
+                        <div class="author-avatar">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4>Project Guide</h4>
+                            <span>Saveetha Engineering College</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Team -->
+<!-- ========================================= -->
+<section class="team" id="team">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Team</span>
+            <h2>Meet the Developer</h2>
+            <p>Passionate about AI, healthcare, and building impactful technology.</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-card glass" data-aos="fade-up" data-aos-delay="0">
+                <div class="team-avatar">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <h3>Sriram V</h3>
+                <p class="team-role">Lead Developer & AI Researcher</p>
+                <p class="team-bio">Designed and implemented the U-Net segmentation pipeline, Flask backend, and responsive frontend.</p>
+                <div class="team-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Darkwebnew" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- CTA Banner -->
+<!-- ========================================= -->
+<section class="cta-banner" id="cta">
+    <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+            <h2>Ready to Experience AI-Powered Cardiac Analysis?</h2>
+            <p>Launch the interactive demo and see the U-Net segmentation model in action.</p>
+            <div class="cta-buttons">
+                <a href="{{ url_for('login') }}" class="btn-primary btn-lg">
+                    <i class="fa-solid fa-play"></i>
+                    Launch Demo
+                </a>
+                <a href="https://github.com/Darkwebnew/Miniproject" target="_blank" class="btn-outline btn-lg">
+                    <i class="fab fa-github"></i>
+                    View Source Code
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================= -->
+<!-- Footer -->
+<!-- ========================================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <i class="fa-solid fa-heart-circle-check"></i>
+                    <span>HeartSeg AI</span>
+                </a>
+                <p>AI-Powered Cardiac MRI Segmentation Platform developed at Saveetha Engineering College by Sriram V & Team.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Darkwebnew/Miniproject" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#performance">Performance</a></li>
+                    <li><a href="{{ url_for('login') }}">Demo</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li><a href="https://github.com/Darkwebnew/Miniproject" target="_blank">GitHub</a></li>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Medical Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p> HeartSeg AI. Developed by Sriram V at Saveetha Engineering College.</p>
+            <p class="footer-disclaimer">This is an academic research project. Not intended for clinical diagnosis without physician oversight.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>

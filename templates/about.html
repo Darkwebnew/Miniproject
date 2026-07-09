@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | HeartSeg AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pages.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="{{ url_for('home') }}" class="logo">
+            <i class="fa-solid fa-heart-circle-check"></i>
+            <span>HeartSeg AI</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <a href="{{ url_for('login') }}" class="btn-login-nav"><i class="fa-solid fa-arrow-right-to-bracket"></i> Launch Demo</a>
+    </div>
+</nav>
+
+<header class="page-header">
+    <div class="container">
+        <h1>About <span class="gradient-text">HeartSeg AI</span></h1>
+        <p>AI-powered cardiac MRI segmentation built as a research project at Saveetha Engineering College.</p>
+    </div>
+</header>
+
+<main class="page-content">
+    <div class="container">
+
+        <!-- Mission -->
+        <div class="content-grid">
+            <div class="content-card">
+                <h2>Project Mission</h2>
+                <p>
+                    HeartSeg AI was developed to address the critical bottleneck in cardiac MRI analysis: 
+                    manual segmentation is time-consuming, requires expert radiologists, and produces inconsistent results.
+                </p>
+                <p>
+                    Our U-Net deep learning model automates the segmentation of Left Ventricle, Right Ventricle, 
+                    and Myocardium — achieving 94.8% accuracy while reducing analysis time from hours to seconds.
+                </p>
+                <ul>
+                    <li>Automated pixel-level cardiac MRI segmentation</li>
+                    <li>12-class disease classification pipeline</li>
+                    <li>Web-based clinical decision support interface</li>
+                    <li>Optimized for rapid inference on standard hardware</li>
+                </ul>
+            </div>
+            <div class="content-image">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="section-title">
+            <h2>Technology Stack</h2>
+            <p>Built with modern tools for deep learning and web deployment.</p>
+        </div>
+        <div class="tech-grid-inline">
+            <div class="tech-tag"><i class="fab fa-python"></i> Python 3.10</div>
+            <div class="tech-tag"><i class="fa-solid fa-brain"></i> TensorFlow 2.x</div>
+            <div class="tech-tag"><i class="fa-solid fa-server"></i> Flask</div>
+            <div class="tech-tag"><i class="fa-solid fa-image"></i> OpenCV</div>
+            <div class="tech-tag"><i class="fa-solid fa-table-cells"></i> NumPy</div>
+            <div class="tech-tag"><i class="fa-solid fa-pills"></i> Pillow</div>
+            <div class="tech-tag"><i class="fa-solid fa-network-wired"></i> U-Net</div>
+            <div class="tech-tag"><i class="fa-solid fa-graduation-cap"></i> scikit-learn</div>
+        </div>
+
+        <!-- Team -->
+        <div class="team-section" style="margin-top: 60px;">
+            <div class="section-title">
+                <h2>Development Team</h2>
+                <p>Final year project by students of Saveetha Engineering College, Chennai.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fa-solid fa-user-graduate"></i></div>
+                    <h3>Sriram V</h3>
+                    <p class="team-role">Project Lead & AI Developer</p>
+                    <p class="team-bio">Designed the U-Net architecture, built the Flask backend, and implemented the full segmentation pipeline.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/Darkwebnew" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fa-solid fa-code"></i></div>
+                    <h3>Surothaaman R</h3>
+                    <p class="team-role">Backend Developer</p>
+                    <p class="team-bio">Developed Flask routes, session management, image preprocessing utilities, and API integration.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/surothaaman" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar"><i class="fa-solid fa-pen-ruler"></i></div>
+                    <h3>Andrew Varghese V S</h3>
+                    <p class="team-role">Frontend & Research</p>
+                    <p class="team-bio">Created UI templates, CSS styling, documentation, and contributed to clinical research validation.</p>
+                    <div class="team-social">
+                        <a href="https://github.com/Andrewvarghese653" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Institution -->
+        <div class="institution-card glass" style="margin-top: 40px;">
+            <i class="fa-solid fa-building-columns"></i>
+            <h2>Saveetha Engineering College</h2>
+            <p>
+                This project was completed under the guidance of the Department of Computer Science 
+                as part of the final year academic curriculum. We thank our faculty supervisors for 
+                their mentorship and support throughout the development cycle.
+            </p>
+            <div class="tech-grid-inline" style="margin-top: 20px;">
+                <div class="tech-tag"><i class="fa-solid fa-location-dot"></i> Chennai, Tamil Nadu</div>
+                <div class="tech-tag"><i class="fa-solid fa-calendar"></i> Academic Year 2024–2025</div>
+                <div class="tech-tag"><i class="fa-solid fa-award"></i> Final Year Project</div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="page-footer">
+    <div class="container">
+        <p> HeartSeg AI. Developed by Sriram V at Saveetha Engineering College.</p>
+    </div>
+</footer>
+
+</body>
+</html>

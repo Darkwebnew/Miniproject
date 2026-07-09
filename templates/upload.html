@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload MRI | HeartSeg AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="{{ url_for('home') }}" class="logo">
+            <i class="fa-solid fa-heart-circle-check"></i>
+            <span>HeartSeg AI</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('upload') }}" class="active">New Analysis</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="{{ url_for('logout') }}" class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        </div>
+    </div>
+</nav>
+
+<main class="upload-main">
+    <div class="container">
+
+        <div class="upload-header">
+            <h1>Upload Cardiac MRI</h1>
+            <p>Submit a cardiac MRI scan for AI-powered segmentation and disease classification.</p>
+        </div>
+
+        <div class="upload-grid">
+            <div class="upload-area glass" id="dropZone">
+                <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
+                    <input type="file" name="file" id="fileInput" accept=".png,.jpg,.jpeg" required hidden>
+                    
+                    <div class="upload-prompt" id="uploadPrompt">
+                        <div class="upload-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h3>Drag & drop your MRI image</h3>
+                        <p>or <span class="browse-link">browse files</span> from your computer</p>
+                        <div class="upload-formats">
+                            <span><i class="fa-solid fa-file-image"></i> PNG</span>
+                            <span><i class="fa-solid fa-file-image"></i> JPG</span>
+                            <span><i class="fa-solid fa-file-image"></i> JPEG</span>
+                        </div>
+                    </div>
+
+                    <div class="file-preview" id="filePreview" style="display: none;">
+                        <img id="previewImg" src="" alt="Preview">
+                        <div class="preview-info">
+                            <p id="fileName">filename.jpg</p>
+                            <p id="fileSize" class="file-size">0 KB</p>
+                        </div>
+                        <button type="button" class="btn-remove" id="removeFile"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <button type="submit" class="btn-analyze" id="submitBtn" disabled>
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Run AI Analysis
+                    </button>
+                </form>
+            </div>
+
+            <div class="upload-sidebar">
+                <div class="info-card glass">
+                    <h4><i class="fa-solid fa-circle-info"></i> Guidelines</h4>
+                    <ul>
+                        <li>Upload grayscale or RGB cardiac MRI scans</li>
+                        <li>Recommended resolution: 128×128 or higher</li>
+                        <li>Maximum file size: 10 MB</li>
+                        <li>Supported formats: PNG, JPG, JPEG</li>
+                    </ul>
+                </div>
+
+                <div class="info-card glass">
+                    <h4><i class="fa-solid fa-brain"></i> What happens next?</h4>
+                    <ol>
+                        <li>Image is preprocessed and normalized</li>
+                        <li>U-Net model generates segmentation mask</li>
+                        <li>12-class classifier predicts condition</li>
+                        <li>Results display with confidence score</li>
+                    </ol>
+                </div>
+
+                <div class="info-card glass warning">
+                    <h4><i class="fa-solid fa-triangle-exclamation"></i> Medical Disclaimer</h4>
+                    <p>This tool is for <strong>research and educational purposes only</strong>. All predictions must be reviewed by a licensed cardiologist before any clinical decision.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="dashboard-footer">
+    <div class="container">
+        <p> HeartSeg AI. Developed by Sriram V at Saveetha Engineering College.</p>
+    </div>
+</footer>
+
+<script>
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const uploadPrompt = document.getElementById('uploadPrompt');
+    const filePreview = document.getElementById('filePreview');
+    const previewImg = document.getElementById('previewImg');
+    const fileName = document.getElementById('fileName');
+    const fileSize = document.getElementById('fileSize');
+    const removeFile = document.getElementById('removeFile');
+    const submitBtn = document.getElementById('submitBtn');
+    const browseLink = document.querySelector('.browse-link');
+
+    function formatSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function showPreview(file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            previewImg.src = e.target.result;
+            fileName.textContent = file.name;
+            fileSize.textContent = formatSize(file.size);
+            uploadPrompt.style.display = 'none';
+            filePreview.style.display = 'flex';
+            submitBtn.disabled = false;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    browseLink.addEventListener('click', () => fileInput.click());
+
+    dropZone.addEventListener('click', (e) => {
+        if (e.target !== removeFile && !removeFile.contains(e.target)) {
+            fileInput.click();
+        }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            showPreview(e.target.files[0]);
+        }
+    });
+
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => dropZone.classList.add('dragover'), false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropZone.addEventListener(eventName, () => dropZone.classList.remove('dragover'), false);
+    });
+
+    dropZone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            showPreview(files[0]);
+        }
+    });
+
+    removeFile.addEventListener('click', () => {
+        fileInput.value = '';
+        uploadPrompt.style.display = 'block';
+        filePreview.style.display = 'none';
+        submitBtn.disabled = true;
+    });
+</script>
+
+</body>
+</html>
