@@ -90,7 +90,7 @@ def upload():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    """Handle upload, preprocess, and predict."""
+    """Handle upload, preprocess, and predict with memory cleanup."""
     if not session.get("logged_in"):
         return redirect(url_for("login"))
 
@@ -110,17 +110,40 @@ def predict():
 
     filename = secure_filename_with_timestamp(file.filename)
     filepath = os.path.join(Config.UPLOAD_FOLDER, filename)
-    file.save(filepath)
-
-    image = preprocess_image(filepath, Config.IMAGE_SIZE)
-    result = predict_disease(model, image)
-
-    return render_template(
-        "result.html",
-        image=filename,
-        prediction=result["class"],
-        confidence=result["confidence"],
-    )
+    
+    try:
+        file.save(filepath)
+        
+        # Preprocess
+        image = preprocess_image(filepath, Config.IMAGE_SIZE)
+        
+        # Predict
+        result = predict_disease(model, image)
+        
+        # Clean up uploaded file immediately
+        try:
+            os.remove(filepath)
+        except Exception as e:
+            print(f"Could not remove file: {e}")
+        
+        return render_template(
+            "result.html",
+            image=filename,
+            prediction=result["class"],
+            confidence=result["confidence"],
+        )
+        
+    except Exception as e:
+        # Clean up on error too
+        try:
+            if os.path.exists(filepath):
+                os.remove(filepath)
+        except:
+            pass
+            
+        print(f"Prediction error: {str(e)}")
+        flash("Analysis failed. The server may be under heavy load. Please try again.", "danger")
+        return redirect(url_for("upload"))
 
 
 @app.route("/about")
