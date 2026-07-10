@@ -3,145 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030712">
     <title>Upload MRI | HeartSeg AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
-    <style>
-        /* Loading Overlay Styles */
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .loading-overlay.active {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .loading-content {
-            text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .spinner-container {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-        }
-
-        .spinner {
-            width: 80px;
-            height: 80px;
-            border: 4px solid rgba(239, 68, 68, 0.15);
-            border-top: 4px solid #ef4444;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        .spinner-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 28px;
-            color: #ef4444;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loading-text {
-            font-family: 'Poppins', sans-serif;
-            color: #f1f5f9;
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .loading-subtext {
-            font-family: 'Poppins', sans-serif;
-            color: #94a3b8;
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-
-        .loading-progress {
-            margin-top: 20px;
-            width: 200px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            overflow: hidden;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .loading-progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #ef4444, #f97316);
-            border-radius: 2px;
-            animation: progress 2s ease-in-out infinite;
-            width: 0%;
-        }
-
-        @keyframes progress {
-            0% { width: 0%; margin-left: 0%; }
-            50% { width: 70%; margin-left: 0%; }
-            100% { width: 0%; margin-left: 100%; }
-        }
-
-        /* Prevent form resubmission */
-        .upload-area.processing {
-            pointer-events: none;
-            opacity: 0.7;
-        }
-    </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar">
     <div class="container nav-container">
         <a href="{{ url_for('home') }}" class="logo">
             <i class="fa-solid fa-heart-circle-check"></i>
             <span>HeartSeg AI</span>
         </a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
             <li><a href="{{ url_for('upload') }}" class="active">New Analysis</a></li>
             <li><a href="{{ url_for('about') }}">About</a></li>
             <li><a href="{{ url_for('contact') }}">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="{{ url_for('logout') }}" class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            <a href="{{ url_for('logout') }}" class="btn-logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </div>
 </nav>
 
+<!-- Main Content -->
 <main class="upload-main">
     <div class="container">
 
@@ -151,24 +50,39 @@
         </div>
 
         <div class="upload-grid">
-            <div class="upload-area glass" id="dropZone">
+            <!-- Drop Zone -->
+            <div class="drop-zone" id="dropZone">
                 <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data" id="uploadForm">
                     <input type="file" name="file" id="fileInput" accept=".png,.jpg,.jpeg" required hidden>
                     
-                    <div class="upload-placeholder" id="uploadPlaceholder">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <div class="drop-zone-content" id="dropZoneContent">
+                        <div class="upload-icon-wrap">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
                         <h3>Drag & Drop your MRI scan</h3>
-                        <p>or <span class="browse-link">browse files</span></p>
-                        <small>Supports PNG, JPG, JPEG (max 10MB)</small>
+                        <p>or <span class="browse-link" id="browseLink">browse files</span></p>
+                        <div class="file-formats">
+                            <span class="format-tag">
+                                <i class="fa-solid fa-image"></i> PNG
+                            </span>
+                            <span class="format-tag">
+                                <i class="fa-solid fa-image"></i> JPG
+                            </span>
+                            <span class="format-tag">
+                                <i class="fa-solid fa-image"></i> JPEG
+                            </span>
+                        </div>
                     </div>
 
-                    <div class="file-preview" id="filePreview" style="display: none;">
-                        <img id="previewImg" src="" alt="Preview">
-                        <div class="file-info">
-                            <p id="fileName"></p>
-                            <p id="fileSize"></p>
+                    <div class="file-preview" id="filePreview">
+                        <img id="previewImg" class="preview-thumb" src="" alt="Preview">
+                        <div class="preview-info">
+                            <p class="preview-name" id="fileName"></p>
+                            <p class="preview-size" id="fileSize"></p>
                         </div>
-                        <button type="button" class="btn-remove" id="removeFile"><i class="fa-solid fa-xmark"></i></button>
+                        <button type="button" class="btn-remove" id="removeFile" aria-label="Remove file">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
                     </div>
 
                     <button type="submit" class="btn-analyze" id="submitBtn">
@@ -178,19 +92,58 @@
                 </form>
             </div>
 
-            <div class="upload-info glass">
-                <h3><i class="fa-solid fa-circle-info"></i> Guidelines</h3>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Use high-resolution cardiac MRI scans</li>
-                    <li><i class="fa-solid fa-check"></i> Ensure clear visibility of heart structures</li>
-                    <li><i class="fa-solid fa-check"></i> Avoid blurred or low-contrast images</li>
-                    <li><i class="fa-solid fa-check"></i> Supported views: Short-axis, Long-axis, 4-chamber</li>
-                </ul>
-                <div class="privacy-note">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <p>Your images are processed securely and never stored permanently.</p>
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="guidelines-card">
+                    <div class="guidelines-header">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <h3>Guidelines</h3>
+                    </div>
+                    <ul class="guidelines-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Use high-resolution cardiac MRI scans
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Ensure clear visibility of heart structures
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Avoid blurred or low-contrast images
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Supported views: Short-axis, Long-axis, 4-chamber
+                        </li>
+                    </ul>
+                    <div class="privacy-note">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <p>Your images are processed securely and never stored permanently.</p>
+                    </div>
                 </div>
-            </div>
+
+                <div class="guidelines-card">
+                    <div class="guidelines-header">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <h3>Important</h3>
+                    </div>
+                    <ul class="guidelines-list">
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Maximum file size: 10MB
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Analysis may take up to 60 seconds
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-check"></i>
+                            Results are for research purposes only
+                        </li>
+                    </ul>
+                </div>
+            </aside>
         </div>
     </div>
 </main>
@@ -198,14 +151,17 @@
 <!-- Loading Overlay -->
 <div class="loading-overlay" id="loadingOverlay">
     <div class="loading-content">
-        <div class="spinner-container">
-            <div class="spinner"></div>
-            <div class="spinner-inner">
-                <i class="fa-solid fa-heart-pulse"></i>
-            </div>
+        <div class="spinner-wrap">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <i class="fa-solid fa-heart-pulse spinner-icon"></i>
         </div>
-        <p class="loading-text">Analyzing MRI Scan</p>
-        <p class="loading-subtext">AI model is processing your image...<br>This may take up to 60 seconds</p>
+        <p class="loading-title">Analyzing MRI Scan</p>
+        <p class="loading-text">
+            AI model is processing your image...<br>
+            This may take up to 60 seconds
+        </p>
         <div class="loading-progress">
             <div class="loading-progress-bar"></div>
         </div>
@@ -215,7 +171,7 @@
 <script>
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('fileInput');
-    const uploadPlaceholder = document.getElementById('uploadPlaceholder');
+    const dropZoneContent = document.getElementById('dropZoneContent');
     const filePreview = document.getElementById('filePreview');
     const previewImg = document.getElementById('previewImg');
     const fileName = document.getElementById('fileName');
@@ -224,9 +180,15 @@
     const submitBtn = document.getElementById('submitBtn');
     const uploadForm = document.getElementById('uploadForm');
     const loadingOverlay = document.getElementById('loadingOverlay');
+    const browseLink = document.getElementById('browseLink');
 
     // Click to browse
-    uploadPlaceholder.addEventListener('click', () => fileInput.click());
+    browseLink.addEventListener('click', () => fileInput.click());
+    dropZoneContent.addEventListener('click', (e) => {
+        if (e.target === dropZoneContent || e.target.closest('.upload-icon-wrap') || e.target.closest('h3')) {
+            fileInput.click();
+        }
+    });
 
     // Drag & drop
     dropZone.addEventListener('dragover', (e) => {
@@ -261,17 +223,17 @@
             previewImg.src = e.target.result;
             fileName.textContent = file.name;
             fileSize.textContent = (file.size / (1024 * 1024)).toFixed(2) + ' MB';
-            uploadPlaceholder.style.display = 'none';
-            filePreview.style.display = 'flex';
-            submitBtn.style.display = 'inline-flex';
+            dropZoneContent.style.display = 'none';
+            filePreview.classList.add('active');
+            submitBtn.style.display = 'flex';
         };
         reader.readAsDataURL(file);
     }
 
     removeFile.addEventListener('click', () => {
         fileInput.value = '';
-        uploadPlaceholder.style.display = 'block';
-        filePreview.style.display = 'none';
+        dropZoneContent.style.display = 'block';
+        filePreview.classList.remove('active');
         submitBtn.style.display = 'none';
     });
 

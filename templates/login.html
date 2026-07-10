@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#030712">
     <title>Login | HeartSeg AI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 </head>
 <body>
+    <!-- Background Effects -->
     <div class="login-bg">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
+        <div class="neural-orb neural-orb-1"></div>
+        <div class="neural-orb neural-orb-2"></div>
+        <div class="neural-orb neural-orb-3"></div>
     </div>
+    <div class="login-grid-overlay"></div>
 
     <div class="login-container">
-        <div class="login-card glass">
+        <!-- Login Card -->
+        <div class="login-card">
             <div class="login-header">
                 <a href="{{ url_for('home') }}" class="logo">
                     <i class="fa-solid fa-heart-circle-check"></i>
@@ -25,8 +31,8 @@
                 <p>Secure access to the cardiac MRI segmentation platform</p>
             </div>
 
-            <form method="POST" action="{{ url_for('login') }}" class="login-form">
-                <div class="input-group">
+            <form method="POST" action="{{ url_for('login') }}" class="login-form" data-validate>
+                <div class="form-group">
                     <label for="username">Username</label>
                     <div class="input-wrap">
                         <i class="fa-solid fa-user"></i>
@@ -34,26 +40,26 @@
                     </div>
                 </div>
 
-                <div class="input-group">
+                <div class="form-group">
                     <label for="password">Password</label>
                     <div class="input-wrap">
                         <i class="fa-solid fa-lock"></i>
                         <input type="password" id="password" name="password" placeholder="Enter password" required>
-                        <button type="button" class="toggle-pass" onclick="togglePassword()" aria-label="Toggle password">
+                        <button type="button" class="toggle-pass" onclick="togglePassword()" aria-label="Toggle password visibility">
                             <i class="fa-solid fa-eye" id="eyeIcon"></i>
                         </button>
                     </div>
                 </div>
 
-                <div class="login-options">
-                    <label class="remember">
+                <div class="form-options">
+                    <label class="remember-me">
                         <input type="checkbox" name="remember">
                         <span>Remember me</span>
                     </label>
-                    <a href="#" class="forgot">Forgot password?</a>
+                    <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="btn-login-submit">
+                <button type="submit" class="btn-submit">
                     <i class="fa-solid fa-arrow-right-to-bracket"></i>
                     Sign In
                 </button>
@@ -63,7 +69,10 @@
                 {% if messages %}
                     <div class="flash-messages">
                         {% for category, message in messages %}
-                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                            <div class="alert alert-{{ category }}">
+                                <i class="fa-solid fa-circle-info"></i>
+                                {{ message }}
+                            </div>
                         {% endfor %}
                     </div>
                 {% endif %}
@@ -72,15 +81,38 @@
             <div class="login-footer">
                 <p>Protected by end-to-end encryption</p>
                 <div class="security-badges">
-                    <span><i class="fa-solid fa-shield-halved"></i> HIPAA Aligned</span>
-                    <span><i class="fa-solid fa-lock"></i> SSL Secured</span>
+                    <span>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        HIPAA Aligned
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-lock"></i>
+                        SSL Secured
+                    </span>
                 </div>
             </div>
         </div>
 
+        <!-- Hero Side Panel -->
         <div class="login-hero">
             <h2>AI-Powered Cardiac MRI Segmentation</h2>
             <p>Automated deep learning analysis for faster, more reliable cardiac diagnostics.</p>
+            
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <i class="fa-solid fa-brain"></i>
+                    <span>U-Net Deep Learning</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Sub-second Inference</span>
+                </div>
+                <div class="hero-feature">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure Processing</span>
+                </div>
+            </div>
+            
             <div class="hero-stats-mini">
                 <div class="mini-stat">
                     <h4>94.8%</h4>
