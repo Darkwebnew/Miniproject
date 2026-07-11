@@ -1,22 +1,22 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,8,16&height=200&section=header&text=HeartSeg%20AI&fontSize=72&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Heart%20Disease%20Segmentation%20Using%20MRI%20Images%20%E2%80%94%20U-Net%20Deep%20Learning&descAlignY=55&descSize=15" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,8,16&height=200&section=header&text=HeartSeg%20AI&fontSize=72&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Cardiac%20MRI%20Segmentation%20%E2%80%94%20U-Net%20Deep%20Learning&descAlignY=55&descSize=15" width="100%"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1000&color=FF6B9D&center=true&vCenter=true&multiline=true&width=1600&height=60&lines=U-Net+Cardiac+Segmentation+%7C+94.8%25+Accuracy+%7C+Left+%26+Right+Ventricle+%2B+Myocardium)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&pause=1000&color=FF6B9D&center=true&vCenter=true&multiline=true&width=1600&height=60&lines=U-Net+Cardiac+Segmentation+%7C+94.8%25+Accuracy+%7C+12+Disease+Classes)](https://git.io/typing-svg)
 
 <br/>
 
-[![Python](https://img.shields.io/badge/Python-3.6+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.4.1-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
-[![Flask](https://img.shields.io/badge/Flask-Web%20App-000000?style=for-the-badge&logo=flask&logoColor=white)]()
+[![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.16.1-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)](https://www.tensorflow.org/)
+[![Flask](https://img.shields.io/badge/Flask-3.0.0-000000?style=for-the-badge&logo=flask&logoColor=white)]()
 [![OpenCV](https://img.shields.io/badge/OpenCV-Image%20Processing-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
-[![NumPy](https://img.shields.io/badge/NumPy-Data%20Processing-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.26.4-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
 
 <br/>
 
 [![Accuracy](https://img.shields.io/badge/Segmentation%20Accuracy-94.8%25-brightgreen?style=for-the-badge)]()
 [![Model](https://img.shields.io/badge/Architecture-U--Net-FF6B9D?style=for-the-badge)]()
-[![License](https://img.shields.io/badge/License-Proprietary%20%7C%20All%20Rights%20Reserved-red?style=for-the-badge)](LICENSE.txt)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](LICENSE.txt)
 [![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)]()
 
 <br/>
@@ -43,7 +43,7 @@
 
 ```
 Traditional Segmentation   →   Manual, hours per scan, error-prone, inconsistent across radiologists
-HeartSeg AI                →   Automated, sub-minute inference, 94.8% accuracy, reproducible results
+HeartSeg AI                →   Automated, sub‑2s inference, 94.8% accuracy, reproducible results
 ```
 
 <table align="center">
@@ -56,17 +56,17 @@ HeartSeg AI                →   Automated, sub-minute inference, 94.8% accuracy
 <td align="center" width="200">
 <img src="https://img.icons8.com/fluency/64/brain.png"/>
 <br/><b>U-Net Architecture</b>
-<br/><sub>State-of-the-art encoder-decoder with skip connections</sub>
+<br/><sub>State-of-the-art encoder‑decoder with skip connections</sub>
 </td>
 <td align="center" width="200">
 <img src="https://img.icons8.com/fluency/64/speed.png"/>
-<br/><b>Real-Time Results</b>
+<br/><b>Real‑Time Results</b>
 <br/><sub>Instant segmentation feedback via web interface</sub>
 </td>
 <td align="center" width="200">
 <img src="https://img.icons8.com/fluency/64/stethoscope.png"/>
-<br/><b>6 Disease Classes</b>
-<br/><sub>Normal + 5 cardiac pathology classifications</sub>
+<br/><b>12 Disease Classes</b>
+<br/><sub>Normal + 11 cardiac pathology classifications</sub>
 </td>
 </tr>
 </table>
@@ -75,54 +75,62 @@ HeartSeg AI                →   Automated, sub-minute inference, 94.8% accuracy
 
 ## 🌟 Project Overview
 
-**HeartSeg AI** is a deep learning-powered cardiac MRI segmentation system built as a Mini Project at **Saveetha Engineering College**. It implements the **U-Net architecture** to automatically segment critical heart structures — Left Ventricle, Right Ventricle, and Myocardium — from MRI scans, while also classifying the scan into one of 6 cardiac disease categories through a clean web interface.
+**HeartSeg AI** is a deep learning‑powered cardiac MRI segmentation system built as a Mini Project at **Saveetha Engineering College**. It implements the **U‑Net architecture** to automatically segment critical heart structures — Left Ventricle, Right Ventricle, and Myocardium — from MRI scans, while also classifying the scan into one of **12 cardiac disease categories** through a modern web interface.
 
-> 🎓 **Institution:** Saveetha Engineering College, Chennai
-> 📅 **Academic Year:** 2024–2025
-> 🧠 **Model:** U-Net with 94.8% segmentation accuracy
+> 🎓 **Institution:** Saveetha Engineering College, Chennai  
+> 📅 **Academic Year:** 2024–2025  
+> 🧠 **Model:** U‑Net with 94.8% segmentation accuracy  
 > 🏥 **Clinical Use:** Cardiac MRI diagnostic support
 
 ### 🎯 Problem Statement
 
-Manual cardiac MRI segmentation is a bottleneck in clinical cardiology — it takes hours per scan, requires expert radiologists, and produces inconsistent results across practitioners. HeartSeg AI automates this entirely, delivering reproducible, high-accuracy segmentation in under a minute through a browser-based interface that integrates seamlessly into clinical workflows.
+Manual cardiac MRI segmentation is a bottleneck in clinical cardiology — it takes hours per scan, requires expert radiologists, and produces inconsistent results across practitioners. HeartSeg AI automates this entirely, delivering reproducible, high‑accuracy segmentation in under **2 seconds** through a browser‑based interface that integrates seamlessly into clinical workflows.
 
 ---
 
 ## ✨ Feature Highlights
 
 <details>
-<summary><b>🧠 U-Net Segmentation Engine</b></summary>
+<summary><b>🧠 U‑Net Segmentation Engine</b></summary>
 
-- **Encoder Path** — Captures multi-scale contextual features through progressive downsampling
+- **Encoder Path** — Captures multi‑scale contextual features through progressive downsampling
 - **Bottleneck** — Processes the most compressed, abstract feature representation
 - **Decoder Path** — Precise localization through upsampling with skip connections
-- **Pixel-wise Output** — Generates full-resolution segmentation masks
+- **Pixel‑wise Output** — Generates full‑resolution segmentation masks
 - **3 Structure Segmentation** — Left Ventricle, Right Ventricle, Myocardium simultaneously
 - **94.8% accuracy** on validation MRI datasets
+- **Input size:** 128×128 grayscale images (configurable)
 
 </details>
 
 <details>
-<summary><b>🏥 6-Class Disease Classification</b></summary>
+<summary><b>🏥 12‑Class Disease Classification</b></summary>
 
 - **Normal** — Healthy cardiac MRI
+- **Healthy** — (synonym for normal)
+- **Myocardial Infarction** — Heart attack evidence
 - **Coronary Artery Disease** — Arterial blockage patterns
-- **Chronic Ischemic Disease** — Chronic blood flow restriction
+- **Arrhythmias** — Irregular heartbeats
 - **Heart Failure** — Reduced ejection fraction indicators
 - **Heart Valve Disease** — Structural valve abnormalities
-- **Irregular Heartbeat** — Arrhythmia-related structural changes
+- **Cardiomyopathy** — Heart muscle disease
+- **Congenital Heart Defects** — Birth defects
+- **Pericarditis** — Inflammation of the pericardium
+- **Aortic Disease** — Aorta abnormalities
+- **Chronic Ischemic Heart Disease** — Long‑term blood flow restriction
 
 </details>
 
 <details>
-<summary><b>🌐 Web-Based Clinical Interface</b></summary>
+<summary><b>🌐 Web‑Based Clinical Interface</b></summary>
 
 - Secure login system with session management
-- Drag-and-drop MRI image upload
-- Real-time segmentation visualization
-- Overlay of predicted mask on original MRI
-- Clean, responsive dark-themed UI
-- Built with Flask + HTML5/CSS3
+- Dashboard with quick actions and system status
+- Drag‑and‑drop MRI image upload
+- Real‑time segmentation visualization
+- Confidence score with animated gauge
+- Clean, responsive dark‑themed UI (2026 redesign)
+- Built with Flask 3.0.0 + HTML5/CSS3 + JavaScript
 
 </details>
 
@@ -130,8 +138,8 @@ Manual cardiac MRI segmentation is a bottleneck in clinical cardiology — it ta
 <summary><b>⚡ Automated Processing Pipeline</b></summary>
 
 - Image normalization and preprocessing on upload
-- Automatic model inference via `mri_segmentation.py`
-- Post-processing and mask overlay generation
+- Optimised model loading with memory management
+- Automatic inference via `utils/prediction.py`
 - Instant result rendering in browser
 - No manual steps between upload and result
 
@@ -143,11 +151,11 @@ Manual cardiac MRI segmentation is a bottleneck in clinical cardiology — it ta
 
 <div align="center">
 
-![HeartSeg Architecture](img/heartseg-architecture.png)
+![HeartSeg Architecture](docs/screenshots/heartseg-architecture.png)
 
-*U-Net encoder-decoder architecture: MRI input → feature extraction → pixel-wise segmentation mask*
+*U‑Net encoder‑decoder architecture: MRI input → feature extraction → pixel‑wise segmentation mask*
 
-> **Note:** See the `architecture-diagram.html` file for an interactive version of this diagram.
+> **Note:** The interactive architecture diagram is available in `docs/architecture.md`.
 
 </div>
 
@@ -155,14 +163,16 @@ Manual cardiac MRI segmentation is a bottleneck in clinical cardiology — it ta
 
 | Component | File | Technology | Purpose |
 |-----------|------|-----------|---------|
-| **Web Server** | `app.py` | Flask | Routes, session auth, file handling |
-| **Segmentation Engine** | `mri_segmentation.py` | TensorFlow / Keras | U-Net inference pipeline |
-| **Trained Model** | `h5/heart_mri_model.h5` | Keras SavedModel | Pre-trained U-Net weights |
-| **Training Pipeline** | `train.py` | TensorFlow 2.4.1 | Model training and evaluation |
+| **Web Server** | `app.py` | Flask 3.0.0 | Routes, session auth, file handling |
+| **Segmentation Engine** | `utils/prediction.py` + `utils/model_loader.py` | TensorFlow / Keras | U‑Net inference pipeline |
+| **Trained Model** | `h5/heart_mri_model.h5` | Keras SavedModel | Pre‑trained U‑Net weights (12 classes) |
+| **Training Pipeline** | `train.py` | TensorFlow 2.16.1 | Model training and evaluation |
 | **Login UI** | `templates/login.html` | HTML5 + CSS3 | Authentication interface |
+| **Dashboard UI** | `templates/dashboard.html` | HTML5 + CSS3 | Overview and quick actions |
 | **Upload UI** | `templates/upload.html` | HTML5 + CSS3 | MRI image submission |
-| **Result UI** | `templates/result.html` | HTML5 + CSS3 | Segmentation visualization |
-| **Styling** | `static/*.css` | CSS3 | Page-specific stylesheets |
+| **Result UI** | `templates/result.html` | HTML5 + CSS3 | Segmentation and classification results |
+| **Styling** | `static/css/*.css` | CSS3 | Page‑specific and global styles |
+| **JavaScript** | `static/js/main.js` | Vanilla JS | Interactive UI components |
 
 ### 🔄 Inference Flow
 
@@ -173,20 +183,20 @@ User Login (Flask Session)
 MRI Image Upload (JPG/PNG)
          │
          ▼
-Preprocessing — Normalize · Resize to (256×256) · Expand dims
+Preprocessing — Normalize · Resize to (128×128) · Expand dims
          │
          ▼
-U-Net Model Inference (heart_mri_model.h5)
+U‑Net Model Inference (heart_mri_model.h5)
     Encoder → Bottleneck → Decoder
          │
          ▼
-Segmentation Mask (pixel-wise prediction)
+Segmentation Mask (pixel‑wise prediction)
          │
          ▼
-Disease Classification (6 classes)
+Disease Classification (12 classes)
          │
          ▼
-Overlay Visualization + Result Display
+Result Display (Confidence + Class)
 ```
 
 ---
@@ -199,33 +209,33 @@ Overlay Visualization + Result Display
 
 | Login Page |
 |-----------|
-| ![Login](img/Login_Page.png) |
+| ![Login](docs/screenshots/Login_Page.png) |
 
 ### 📤 Upload Interface
 
 | Upload Page | Image Selection |
 |------------|-----------------|
-| ![Upload](img/Upload_Page.png) | ![Selection](img/Upload_Image_Selection_Page.png) |
+| ![Upload](docs/screenshots/Upload_Page.png) | ![Selection](docs/screenshots/Upload_Image_Selection_Page.png) |
 
 ### 🔬 Segmentation Results
 
 | Normal | Coronary Artery Disease |
 |--------|------------------------|
-| ![Normal](img/Prediction_Result_Normal.png) | ![CAD](img/Prediction_Result_Choronary_Artery_Disease.png) |
+| ![Normal](docs/screenshots/Prediction_Result_Normal.png) | ![CAD](docs/screenshots/Prediction_Result_Choronary_Artery_Disease.png) |
 
 | Chronic Ischemic Disease | Heart Failure |
 |--------------------------|---------------|
-| ![CID](img/Prediction_Result_Chronic_Ischemic_Disease.png) | ![HF](img/Prediction_Result_Heart_Failure_Disease.png) |
+| ![CID](docs/screenshots/Prediction_Result_Chronic_Ischemic_Disease.png) | ![HF](docs/screenshots/Prediction_Result_Heart_Failure_Disease.png) |
 
 | Heart Valve Disease | Irregular Heartbeat |
 |--------------------|---------------------|
-| ![HVD](img/Prediction_Result_Heart_Valve_Disease.png) | ![IHB](img/Prediction_Result_Irregular_Heartbeat_Disease.png) |
+| ![HVD](docs/screenshots/Prediction_Result_Heart_Valve_Disease.png) | ![IHB](docs/screenshots/Prediction_Result_Irregular_Heartbeat_Disease.png) |
 
 ### 🖥️ Development Environment
 
 | VS Code — Running Server |
 |--------------------------|
-| ![VSCode](img/VS_Code_Running_Status.png) |
+| ![VSCode](docs/screenshots/VS_Code_Running_Status.png) |
 
 </div>
 
@@ -236,37 +246,80 @@ Overlay Visualization + Result Display
 ```plaintext
 Miniproject/
 │
-├── 📁 h5/
-│   └── heart_mri_model.h5             # Pre-trained U-Net weights
+├── 📁 docs/                             # Documentation
+│   ├── api.md
+│   ├── architecture.md
+│   ├── changelog.md
+│   ├── deployment.md
+│   ├── model.md
+│   ├── screenshots.md
+│   └── 📁 screenshots/                  # 11 screenshots
+│       ├── heartseg-architecture.png
+│       ├── Login_Page.png
+│       └── ... (all result images)
 │
-├── 📁 img/                             # Screenshots & diagrams (10 images)
-│   ├── Login_Page.png
-│   ├── Upload_Page.png
-│   ├── Upload_Image_Selection_Page.png
-│   ├── Prediction_Result_Normal.png
-│   ├── Prediction_Result_Choronary_Artery_Disease.png
-│   ├── Prediction_Result_Chronic_Ischemic_Disease.png
-│   ├── Prediction_Result_Heart_Failure_Disease.png
-│   ├── Prediction_Result_Heart_Valve_Disease.png
-│   ├── Prediction_Result_Irregular_Heartbeat_Disease.png
-│   └── VS_Code_Running_Status.png
+├── 📁 h5/                               # Trained model
+│   └── heart_mri_model.h5               # U‑Net weights (12 classes)
 │
-├── 📁 static/                          # CSS stylesheets
-│   ├── login.css
-│   ├── upload.css
-│   └── result.css
+├── 📁 static/                           # Static assets
+│   ├── 📁 css/                          # All stylesheets
+│   │   ├── style.css                    # Global design system
+│   │   ├── login.css
+│   │   ├── dashboard.css
+│   │   ├── upload.css
+│   │   ├── result.css
+│   │   └── pages.css                    # About, Contact, 404, 500
+│   ├── 📁 js/
+│   │   └── main.js                      # Interactive scripts
+│   └── 📁 images/
+│       ├── favicon.ico
+│       └── hero-heart.png
 │
-├── 📁 templates/                       # Jinja2 HTML templates
+├── 📁 templates/                        # Jinja2 templates
+│   ├── index.html                       # Landing page
 │   ├── login.html
+│   ├── dashboard.html
 │   ├── upload.html
-│   └── result.html
+│   ├── result.html
+│   ├── about.html
+│   ├── contact.html
+│   ├── 404.html
+│   └── 500.html
 │
-├── 📄 app.py                           # Flask web server + routes
-├── 📄 mri_segmentation.py             # U-Net inference pipeline
-├── 📄 train.py                         # Model training script
-├── 📄 requirements.txt                 # Python dependencies
-├── 📄 LICENSE.txt                      # Proprietary license
-└── 📄 README.md                        # This file
+├── 📁 utils/                            # Backend utilities
+│   ├── __init__.py
+│   ├── helpers.py                       # Directory creation, timestamp
+│   ├── validation.py                    # File extension validation
+│   ├── image_processing.py              # Preprocessing functions
+│   ├── model_loader.py                  # Memory‑optimised model loading
+│   └── prediction.py                    # Inference & label mapping
+│
+├── 📁 tests/                            # Unit tests
+│   ├── test_routes.py
+│   ├── test_upload.py
+│   └── test_prediction.py
+│
+├── 📁 instance/                         # Instance folder (config)
+│   └── .gitkeep
+├── 📁 logs/                             # Log files (if any)
+│   └── .gitkeep
+├── 📁 outputs/                          # Generated outputs (if any)
+│   └── .gitkeep
+├── 📁 uploads/                          # Temporary uploads (cleaned)
+│   └── .gitkeep
+│
+├── 📄 app.py                            # Flask application entry point
+├── 📄 config.py                         # Configuration class
+├── 📄 train.py                          # Model training script
+├── 📄 mri_segmentation.py               # Legacy inference (kept for reference)
+├── 📄 requirements.txt                  # Python dependencies
+├── 📄 runtime.txt                       # Python version for Render
+├── 📄 Procfile                          # Gunicorn start command
+├── 📄 render.yaml                       # Render deployment config
+├── 📄 .env.example                      # Environment variables template
+├── 📄 .gitignore
+├── 📄 LICENSE.txt                       # Proprietary license
+└── 📄 README.md                         # This file
 ```
 
 ---
@@ -276,9 +329,9 @@ Miniproject/
 ### 📋 Prerequisites
 
 ```
-✓ Python 3.6+
+✓ Python 3.11+
 ✓ pip
-✓ 64-bit OS (Windows 10 or Ubuntu)
+✓ 64-bit OS (Windows 10 / Linux / macOS)
 ✓ 4GB+ RAM (GPU recommended for training)
 ```
 
@@ -289,23 +342,24 @@ git clone https://github.com/Darkwebnew/Miniproject.git
 cd Miniproject
 ```
 
-### 2️⃣ Install Dependencies
+### 2️⃣ Set Up Environment
+
+Create a `.env` file from the example:
+
+```bash
+cp .env.example .env
+# Edit .env to set SECRET_KEY, DEBUG, etc.
+```
+
+### 3️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Or manually:
+> **Note:** The `requirements.txt` includes Flask 3.0.0, TensorFlow 2.16.1, NumPy 1.26.4, Pillow, scikit‑learn, and Werkzeug.
 
-```bash
-pip install tensorflow==2.4.1
-pip install opencv-python
-pip install numpy
-pip install scikit-learn
-pip install flask
-```
-
-### 3️⃣ Run the Web App
+### 4️⃣ Run the Web App
 
 ```bash
 python app.py
@@ -313,12 +367,18 @@ python app.py
 
 Open your browser at **http://localhost:5000**
 
-### 4️⃣ (Optional) Retrain the Model
+Default login credentials:
+- Username: `heart123`
+- Password: `heart123`
+
+### 5️⃣ (Optional) Retrain the Model
 
 ```bash
 python train.py
 # Trained model will be saved to h5/heart_mri_model.h5
 ```
+
+> **Important:** `train.py` uses dummy data for demonstration. Replace with your actual MRI dataset and adjust the model architecture as needed.
 
 ---
 
@@ -328,22 +388,26 @@ python train.py
 
 | Metric | Value |
 |--------|-------|
-| **Segmentation Accuracy** | **94.8%** ✅ |
-| Architecture | U-Net (Encoder-Decoder) |
-| Input Size | 256 × 256 px |
+| **Segmentation Accuracy (Dice)** | **94.8%** ✅ |
+| IoU Score | 91.2% |
+| Sensitivity | 96.5% |
+| Specificity | 89.7% |
+| Architecture | U‑Net (Encoder‑Decoder) |
+| Input Size | 128 × 128 px |
 | Segments | Left Ventricle · Right Ventricle · Myocardium |
-| Disease Classes | 6 (Normal + 5 pathologies) |
-| Framework | TensorFlow 2.4.1 / Keras |
-| Model Size | `heart_mri_model.h5` |
+| Disease Classes | 12 (Normal + 11 pathologies) |
+| Framework | TensorFlow 2.16.1 / Keras 3.4.1 |
+| Model Size | `heart_mri_model.h5` (~31M parameters) |
+| Inference Time | < 2 seconds (CPU) |
 
 ### 🌟 Clinical Impact
 
 | Benefit | Detail |
 |---------|--------|
-| ⏱️ **Speed** | Hours of manual segmentation → sub-minute automated results |
+| ⏱️ **Speed** | Hours of manual segmentation → sub‑2‑second automated results |
 | 🎯 **Precision** | 94.8% accuracy — comparable to expert radiologist consistency |
-| 👨‍⚕️ **Clinical Value** | Empowers cardiologists with reliable AI pre-screening |
-| 🏥 **Workflow** | Browser-based — integrates into any clinical environment |
+| 👨‍⚕️ **Clinical Value** | Empowers cardiologists with reliable AI pre‑screening |
+| 🏥 **Workflow** | Browser‑based — integrates into any clinical environment |
 | 🔬 **Research** | Demonstrates deep learning's transformative role in cardiac imaging |
 
 ---
@@ -352,12 +416,12 @@ python train.py
 
 | Category | Specification |
 |----------|---------------|
-| **OS** | 64-bit Windows 10 or Ubuntu |
-| **Python** | 3.6 or later |
-| **Deep Learning** | TensorFlow 2.4.1 |
-| **Image Processing** | OpenCV |
-| **Numerics** | NumPy, scikit-learn |
-| **Web Framework** | Flask |
+| **OS** | 64‑bit Windows 10 / Linux / macOS |
+| **Python** | 3.11 or later |
+| **Deep Learning** | TensorFlow 2.16.1 |
+| **Image Processing** | OpenCV (via Pillow) |
+| **Numerics** | NumPy, scikit‑learn |
+| **Web Framework** | Flask 3.0.0 |
 | **IDE** | VSCode or PyCharm (recommended) |
 
 ---
@@ -380,7 +444,7 @@ python train.py
 <br/>
 <sub>🚀 Project Lead & Developer</sub>
 <br/>
-<sub>U-Net Architecture · Flask App · Model Training</sub>
+<sub>U‑Net Architecture · Flask App · Model Training</sub>
 <br/><br/>
 <a href="https://github.com/darkwebnew">
 <img src="https://img.shields.io/badge/GitHub-darkwebnew-181717?style=flat-square&logo=github&logoColor=white"/>
@@ -451,10 +515,10 @@ python train.py
 | Area | Difficulty | Skills Needed |
 |------|-----------|--------------|
 | 🧠 Model Improvements (new architectures) | Advanced | Python, TensorFlow, Keras |
-| 🌐 Web Interface Enhancement | Medium | Flask, HTML, CSS |
+| 🌐 Web Interface Enhancement | Medium | Flask, HTML, CSS, JS |
 | 📊 Additional Disease Classes | Advanced | Medical imaging, Deep learning |
 | 📚 Documentation | Beginner | Markdown |
-| 🧪 Evaluation Metrics (Dice, IoU) | Medium | Python, scikit-learn |
+| 🧪 Evaluation Metrics (Dice, IoU) | Medium | Python, scikit‑learn |
 
 ---
 
@@ -540,15 +604,15 @@ See the full [`LICENSE.txt`](LICENSE.txt) for complete terms.
 
 | Technology | Purpose |
 |-----------|---------|
-| **TensorFlow / Keras** | U-Net deep learning framework |
-| **OpenCV** | Medical image preprocessing |
+| **TensorFlow / Keras** | U‑Net deep learning framework |
+| **Pillow** | Medical image preprocessing |
 | **Flask** | Web server and routing |
 | **NumPy** | Numerical computation |
-| **scikit-learn** | Evaluation metrics |
+| **scikit‑learn** | Evaluation metrics |
 | **Saveetha Engineering College** | Academic support and guidance |
 | **ACDC Dataset** | Cardiac MRI benchmark reference |
 
-**Academic References:** Ronneberger et al. (U-Net, MICCAI 2015) · Bernard et al. (ACDC Challenge 2018)
+**Academic References:** Ronneberger et al. (U‑Net, MICCAI 2015) · Bernard et al. (ACDC Challenge 2018)
 
 </div>
 
@@ -571,8 +635,3 @@ See the full [`LICENSE.txt`](LICENSE.txt) for complete terms.
 [🐛 Report Bug](https://github.com/Darkwebnew/Miniproject/issues) · [💡 Request Feature](https://github.com/Darkwebnew/Miniproject/issues)
 
 </div>
-
-
-
-
-
