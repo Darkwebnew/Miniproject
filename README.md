@@ -490,9 +490,31 @@ python train.py
 
 ### 🎓 Academic Guidance
 
+<table>
+<tr>
+<td align="center" width="240">
+<a href="https://github.com/swedha333">
+<img src="https://github.com/swedha333.png" width="120" height="120" style="border-radius:50%;border:4px solid #FF6B9D;"/>
+</a>
+<br/><br/>
+<b>Swedha</b>
+<br/>
+<sub>🎓 Mini Project Mentor</sub>
+<br/>
+<sub>Project Guidance & Review</sub>
+<br/><br/>
+<a href="https://github.com/swedha333">
+<img src="https://img.shields.io/badge/GitHub-swedha333-181717?style=flat-square&logo=github&logoColor=white"/>
+</a>
+</td>
+</tr>
+</table>
+
+<br/>
+
 | Role | Institution |
 |------|-------------|
-| Mini Project Supervisors | Saveetha Engineering College, Chennai |
+| Mini Project Mentor | Saveetha Engineering College, Chennai |
 
 </div>
 
